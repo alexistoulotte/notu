@@ -1,0 +1,134 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://alweb.org/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Aug 2014 22:42:38 GMT
+      Server:
+      - Apache/2.2.16 (Debian)
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"f24a7f595f7d88d135193e6f203bfbd5"'
+      Cache-Control:
+      - public
+      X-Request-Id:
+      - 8074a08d-0ae5-409c-b2d8-e62863c24eed
+      X-Runtime:
+      - '0.005933'
+      X-Powered-By:
+      - Phusion Passenger 4.0.49
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '929'
+      Content-Type:
+      - text/html; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+
+        <html lang="fr">
+
+        <head>
+          <meta charset="utf-8" />
+          <title>Alexis Toulotte</title>
+          <meta name="author" content="Alexis Toulotte" />
+          <meta name="description" content="Page personnelle d'Alexis Toulotte." />
+          <meta name="robots" content="all" />
+          <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+          <meta name="DC.format" content="text/html" />
+          <meta name="DC.language" content="fr" />
+          <meta name="DC.title" content="Alexis Toulotte" />
+          <meta name="DC.creator" content="Alexis Toulotte" />
+          <meta name="DC.description" content="Page personnelle d'Alexis Toulotte." />
+          <meta name="google-site-verification" content="1dodRvC0Zp-iAZilnTeT5PaY4bPKHwSzs9994-3g304" />
+          <script src="/assets/application-2faf062622c53593fc90ee0ba5667a48.js"></script>
+          <link href="/assets/application-a374b3c70bad2d98bffceac38d81f6d5.css" media="screen" rel="stylesheet" />
+          <link href="/avatar?size=128" rel="icon" type="image/png" />
+          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dancing Script" />
+          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway" />
+        </head>
+
+        <body>
+
+          <h1>Alexis Toulotte</h1>
+
+        <ul class="services">
+          <li class="github">
+            <a href="https://github.com/alexistoulotte"><span>GitHub</span></a>
+          </li>
+          <li class="rubygems">
+            <a href="https://rubygems.org/profiles/alexistoulotte"><span>RubyGems</span></a>
+          </li>
+          <li class="cv">
+            <a href="https://dl.dropbox.com/u/5601946/CV.pdf"><span>CV</span></a>
+          </li>
+          <li class="email">
+            <a href="#"><span>Email</span></a>
+          </li>
+          <li class="phone">
+            <a href="callto://+687817612"><span>+687 81 76 12</span></a>
+          </li>
+          <li class="skype">
+            <a href="skype:alexistoulotte"><span>Skype</span></a>
+          </li>
+          <li class="twitter">
+            <a href="https://twitter.com/alexistoulotte"><span>Twitter</span></a>
+          </li>
+          <li class="facebook">
+            <a href="https://www.facebook.com/alexis.toulotte"><span>Facebook</span></a>
+          </li>
+          <li class="linked-in">
+            <a href="https://www.linkedin.com/in/alexistoulotte"><span>LinkedIn</span></a>
+          </li>
+          <li class="google-plus">
+            <a href="https://plus.google.com/111956742901852825014/posts"><span>Google+</span></a>
+          </li>
+          <li class="youtube">
+            <a href="https://www.youtube.com/alexistoulotte"><span>YouTube</span></a>
+          </li>
+          <li class="mixcloud">
+            <a href="https://www.mixcloud.com/alexistoulotte"><span>Mixcloud</span></a>
+          </li>
+          <li class="last-fm">
+            <a href="http://www.lastfm.fr/user/alexistoulotte"><span>Last.fm</span></a>
+          </li>
+          <li class="sound-cloud">
+            <a href="https://soundcloud.com/alexistoulotte"><span>SoundCloud</span></a>
+          </li>
+          <li class="delicious">
+            <a href="https://delicious.com/alexistoulotte"><span>Delicious</span></a>
+          </li>
+        </ul>
+
+
+        </body>
+
+        </html>
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 22:42:38 GMT
+recorded_with: VCR 2.9.2
