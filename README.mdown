@@ -1,0 +1,28 @@
+# Kagu
+
+API to get Last.fm most played and loved tracks.
+
+## Installation
+
+Just add this into your `Gemfile`:
+
+    gem 'notu'
+
+Then, just run `bundle install`.
+
+## Example
+
+    library = Notu::Library.new(username: 'johndoe')
+
+    library.loved_tracks.each do |track|
+      puts track.artist
+    end
+
+    library.most_played_tracks(period: 'last_month').each do |track|
+      puts "#{track.artist}: #{track.plays_count}"
+    end
+
+## Executing test suite
+
+This project is fully tested with [Rspec 3](http://github.com/rspec/rspec).
+Just run `bundle exec rake` (after a `bundle install`).

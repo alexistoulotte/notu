@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'activesupport', '>= 4.1.0', '< 4.2.0'
   s.add_dependency 'nokogiri', '>= 1.6.0', '< 1.7.0'
 
-  s.add_development_dependency 'byebug', '>= 3.2.0', '< 3.3.0'
+  s.add_development_dependency 'byebug', '>= 3.3.0', '< 3.4.0'
   s.add_development_dependency 'rake', '>= 10.3.0', '< 10.4.0'
   s.add_development_dependency 'rspec', '>= 3.0.0', '< 3.1.0'
   s.add_development_dependency 'vcr', '>= 2.9.0', '< 2.10.0'
