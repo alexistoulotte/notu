@@ -11,6 +11,14 @@ module Notu
       self.title = attributes['title']
     end
 
+    def ==(other)
+      other.is_a?(self.class) && artist == other.artist && title == other.title
+    end
+
+    def eql?(other)
+      super || self == other
+    end
+
     private
 
     def artist=(value)

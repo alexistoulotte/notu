@@ -4,6 +4,49 @@ describe Notu::Track do
 
   let(:track) { Notu::Track.new(artist: 'Serial Killaz', title: 'Good Enough') }
 
+  describe '#==' do
+
+    let(:other) { track.dup }
+
+    it 'is false if not a track' do
+      expect(track == 'foo').to be(false)
+    end
+
+    it 'is false if artist differs' do
+      expect {
+        allow(other).to receive(:artist).and_return('Foo')
+      }.to change { track == other }.from(true).to(false)
+    end
+
+    it 'is false if title differs' do
+      expect {
+        allow(other).to receive(:title).and_return('Bar')
+      }.to change { track == other }.from(true).to(false)
+    end
+
+    it 'is true if plays_count differs' do
+      expect {
+        allow(other).to receive(:plays_count).and_return(102)
+      }.not_to change { track == other }
+    end
+
+  end
+
+  describe '#eql?' do
+
+    it 'is true for same object' do
+      expect(track.eql?(track)).to be(true)
+    end
+
+    it 'is true if == returns true' do
+      other = track.dup
+      expect {
+        allow(track).to receive(:==).and_return(false)
+      }.to change { track.eql?(other) }.from(true).to(false)
+    end
+
+  end
+
   describe '#artist' do
 
     it 'is value set at initialization' do
