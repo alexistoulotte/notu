@@ -130,4 +130,12 @@ describe Notu::Track do
 
   end
 
+  describe '#to_s' do
+
+    it 'is "artist - title"' do
+      expect(track.to_s).to eq('Serial Killaz - Good Enough')
+    end
+
+  end
+
 end

@@ -27,6 +27,10 @@ module Notu
       super || self == other
     end
 
+    def to_s
+      "#{artist} - #{title}"
+    end
+
     private
 
     def artist=(value)
