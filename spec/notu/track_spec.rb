@@ -4,6 +4,29 @@ describe Notu::Track do
 
   let(:track) { Notu::Track.new(artist: 'Serial Killaz', title: 'Good Enough') }
 
+  describe '#<=>' do
+
+    let(:other) { track.dup }
+
+    it 'compares track by artist' do
+      expect {
+        allow(other).to receive(:artist).and_return('Technimatic')
+      }.to change { track <=> other }.from(0).to(-1)
+    end
+
+    it 'compares track by artist and then by title' do
+      expect {
+        allow(other).to receive(:title).and_return('Send Dem')
+      }.to change { track <=> other }.from(0).to(-1)
+    end
+
+    it 'returns nil if given track is not a track' do
+      expect(track <=> nil).to be_nil
+      expect(track <=> 'foo').to be_nil
+    end
+
+  end
+
   describe '#==' do
 
     let(:other) { track.dup }

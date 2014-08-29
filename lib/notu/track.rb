@@ -2,6 +2,8 @@ module Notu
 
   class Track
 
+    include Comparable
+
     attr_reader :artist, :plays_count, :title
 
     def initialize(attributes = {})
@@ -9,6 +11,12 @@ module Notu
       self.artist = attributes['artist']
       self.plays_count = attributes['plays_count']
       self.title = attributes['title']
+    end
+
+    def <=>(other)
+      return nil unless other.is_a?(Track)
+      result = (artist <=> other.artist)
+      result.zero? ? (title <=> other.title) : result
     end
 
     def ==(other)
