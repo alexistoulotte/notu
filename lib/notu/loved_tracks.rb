@@ -25,7 +25,7 @@ module Notu
     private
 
     def page_urls
-      @loved_pages ||= (1..pages_count).map do |index|
+      (1..pages_count).map do |index|
         library.url(path: 'library/loved', query: { 'sortBy' => 'date', 'sortOrder' => 'desc', 'page' => index })
       end
     end

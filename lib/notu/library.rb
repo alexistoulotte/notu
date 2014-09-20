@@ -13,7 +13,7 @@ module Notu
     end
 
     def loved_tracks
-      @loved_tracks ||= LovedTracks.new(self)
+      LovedTracks.new(self)
     end
 
     def most_played_tracks(options = {})

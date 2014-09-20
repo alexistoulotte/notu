@@ -30,10 +30,6 @@ describe Notu::Library do
       expect(library.loved_tracks).to be_a(Notu::LovedTracks)
     end
 
-    it 'always returns same object' do
-      expect(library.loved_tracks.object_id).to be(library.loved_tracks.object_id)
-    end
-
   end
 
   describe '#most_played_tracks' do
