@@ -42,10 +42,10 @@ describe Notu::LovedTracks, :vcr do
   describe '#page_urls' do
 
     it 'is correct' do
-      urls = loved_tracks.send(:page_urls)
-      expect(urls.size).to eq(loved_tracks.send(:pages_count))
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/library/loved?sortBy=date&sortOrder=desc&page=12')
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/library/loved?sortBy=date&sortOrder=desc&page=3')
+      urls = loved_tracks.page_urls
+      expect(urls.size).to eq(loved_tracks.pages_count)
+      expect(urls).to include('http://www.last.fm/user/alexistoulotte/loved?page=12')
+      expect(urls).to include('http://www.last.fm/user/alexistoulotte/loved?page=3')
     end
 
   end
@@ -54,6 +54,22 @@ describe Notu::LovedTracks, :vcr do
 
     it 'is correct' do
       expect(loved_tracks.send(:pages_count)).to be_within(10).of(30)
+    end
+
+  end
+
+  describe '#params' do
+
+    it 'is an empty hash' do
+      expect(loved_tracks.params).to eq({})
+    end
+
+  end
+
+  describe '#path' do
+
+    it 'is "loved"' do
+      expect(loved_tracks.path).to eq('loved')
     end
 
   end

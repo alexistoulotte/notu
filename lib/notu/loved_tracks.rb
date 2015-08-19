@@ -3,36 +3,23 @@ module Notu
   class LovedTracks
 
     include Enumerable
-
-    attr_reader :library
-
-    def initialize(library)
-      raise ArgumentError.new("#{self.class}#library must be a library, #{library.inspect} given") unless library.is_a?(Library)
-      @library = library
-    end
+    include Listing
 
     def each(&block)
       return unless block_given?
       page_urls.each do |url|
         document = HtmlDocument.get(url)
-        (document/'#lovedTracks td.subjectCell').each do |element|
-          yield(Track.new(artist: (element/'a').first.text, title: (element/'a').last.text))
+        (document/'#user-loved-tracks-section tbody tr').each do |element|
+          artist = (element/'td.chartlist-name .link-block-target').first.text
+          title = (element/'td.chartlist-name .chartlist-artists').first.text
+          yield(Track.new(artist: artist, title: title))
         end
       end
       nil
     end
 
-    private
-
-    def page_urls
-      (1..pages_count).map do |index|
-        library.url(path: 'library/loved', query: { 'sortBy' => 'date', 'sortOrder' => 'desc', 'page' => index })
-      end
-    end
-
-    def pages_count
-      document = HtmlDocument.get(library.url(path: 'library/loved'))
-      [1, (document/'div.whittle-pagination a').map { |link| link.text.to_i }].flatten.max
+    def path
+      'loved'
     end
 
   end

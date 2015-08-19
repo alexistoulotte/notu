@@ -19,29 +19,29 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Thu, 28 Aug 2014 22:42:39 GMT
+      - Wed, 19 Aug 2015 01:03:19 GMT
       Server:
       - Apache/2.2.16 (Debian)
       X-Request-Id:
-      - 07c324c9-502f-4748-92e2-8fbee1ec0c49
+      - 482c43e7-2fe7-46fd-89b0-7bc08e30f0ed
       X-Runtime:
-      - '0.003557'
+      - '0.003336'
       X-Powered-By:
-      - Phusion Passenger 4.0.49
+      - Phusion Passenger 4.0.53
       Status:
       - 404 Not Found
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '495'
+      - '309'
       Content-Type:
       - text/html; charset=utf-8
     body:
       encoding: UTF-8
       string: |
-        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <!DOCTYPE html>
 
-        <html xmlns="http://www.w3.org/1999/xhtml">
+        <html>
 
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -63,18 +63,11 @@ http_interactions:
             <p>
                 You may have mistyped the address or the page may have moved.
             </p>
-
-            <p class="footer">
-                Powered by
-                <a href="http://httpd.apache.org" title="The Apache HTTP Server Project">Apache</a>
-                and
-                <a href="http://debian.org" title="The Universal Operating System">Debian</a>.
-            </p>
         </div>
 
         </body>
 
         </html>
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 22:42:39 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 19 Aug 2015 01:03:20 GMT
+recorded_with: VCR 2.9.3

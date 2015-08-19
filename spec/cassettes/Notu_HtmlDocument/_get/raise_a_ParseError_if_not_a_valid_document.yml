@@ -19,7 +19,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Thu, 28 Aug 2014 22:42:23 GMT
+      - Wed, 19 Aug 2015 01:03:28 GMT
       Server:
       - Apache/2.2.16 (Debian)
       X-Frame-Options:
@@ -29,15 +29,15 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"f24a7f595f7d88d135193e6f203bfbd5"'
+      - '"fcc9c11bad7747937dfc96cd94e35bca"'
       Cache-Control:
       - public
       X-Request-Id:
-      - e9e38d91-fea7-449b-9ae1-3c5390ef8bdc
+      - 8b9c16a1-d4b1-4634-8b62-2781713921f7
       X-Runtime:
-      - '0.003488'
+      - '0.003552'
       X-Powered-By:
-      - Phusion Passenger 4.0.49
+      - Phusion Passenger 4.0.53
       Location:
       - http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042
       Status:
@@ -52,7 +52,7 @@ http_interactions:
       encoding: UTF-8
       string: <html><body>You are being <a href="http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 22:42:23 GMT
+  recorded_at: Wed, 19 Aug 2015 01:03:28 GMT
 - request:
     method: get
     uri: http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042
@@ -71,32 +71,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Date:
+      - Wed, 19 Aug 2015 00:59:59 GMT
+      Last-Modified:
+      - Thu, 24 Jan 2013 00:31:59 GMT
+      Connection:
+      - Keep-Alive
+      Cache-Control:
+      - max-age=300
+      Age:
+      - '210'
       Accept-Ranges:
       - bytes
       Access-Control-Allow-Origin:
       - "*"
-      Cache-Control:
-      - max-age=300
       Content-Disposition:
       - inline; filename="c090d5749bd9877588ac8563e0817042.png"
       Content-Type:
       - image/png
-      Date:
-      - Thu, 28 Aug 2014 22:42:23 GMT
       Expires:
-      - Thu, 28 Aug 2014 22:47:23 GMT
-      Last-Modified:
-      - Thu, 24 Jan 2013 00:31:59 GMT
+      - Wed, 19 Aug 2015 01:04:59 GMT
+      Link:
+      - <http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042>; rel="canonical"
       Server:
       - ECS (syd/EBA1)
       Source-Age:
       - '0'
-      Via:
-      - 1.1 varnish
-      X-Cache:
-      - HIT
       X-Varnish:
-      - '271336745'
+      - '429679271'
       Content-Length:
       - '11789'
     body:
@@ -365,5 +367,5 @@ http_interactions:
         0nq4U7qFDsaylSsypzHmjP5Aa8QrNs33AowZ7kMMtcj/Kwwzi4jsmgCKY16w
         HkbsMQmjmC6gSeNGLyXZEkoxlIaZ8f8Dl9VUi97Go/gAAAAASUVORK5CYII=
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 22:42:23 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 19 Aug 2015 01:03:29 GMT
+recorded_with: VCR 2.9.3

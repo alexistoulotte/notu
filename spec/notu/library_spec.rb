@@ -37,11 +37,11 @@ describe Notu::Library do
     it 'returns a LovedTracks object' do
       most_played_tracks = library.most_played_tracks
       expect(most_played_tracks).to be_a(Notu::MostPlayedTracks)
-      expect(most_played_tracks.period).to eq('last_week')
+      expect(most_played_tracks.period).to eq('7 days')
     end
 
     it 'accepts options' do
-      expect(library.most_played_tracks(period: 'last_month').period).to eq('last_month')
+      expect(library.most_played_tracks(period: '30 days').period).to eq('30 days')
     end
 
   end

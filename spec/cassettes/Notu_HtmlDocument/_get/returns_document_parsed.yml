@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Aug 2014 22:42:22 GMT
+      - Wed, 19 Aug 2015 01:03:29 GMT
       Server:
       - Apache/2.2.16 (Debian)
       X-Frame-Options:
@@ -29,21 +29,21 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"f24a7f595f7d88d135193e6f203bfbd5"'
+      - '"17883192c98ca0216d45df6579fc74e5"'
       Cache-Control:
       - public
       X-Request-Id:
-      - a531f08d-7b25-46c4-a043-2602e78b852c
+      - cd9b0e9e-0677-4cd9-a9fd-68010bb7487d
       X-Runtime:
-      - '0.005804'
+      - '0.007090'
       X-Powered-By:
-      - Phusion Passenger 4.0.49
+      - Phusion Passenger 4.0.53
       Status:
       - 200 OK
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '929'
+      - '787'
       Content-Type:
       - text/html; charset=utf-8
     body:
@@ -66,8 +66,8 @@ http_interactions:
           <meta name="DC.creator" content="Alexis Toulotte" />
           <meta name="DC.description" content="Page personnelle d'Alexis Toulotte." />
           <meta name="google-site-verification" content="1dodRvC0Zp-iAZilnTeT5PaY4bPKHwSzs9994-3g304" />
-          <script src="/assets/application-2faf062622c53593fc90ee0ba5667a48.js"></script>
-          <link href="/assets/application-a374b3c70bad2d98bffceac38d81f6d5.css" media="screen" rel="stylesheet" />
+          <script src="/assets/application-eae74a30b96601b52819de1d8f7920d7.js"></script>
+          <link rel="stylesheet" media="screen" href="/assets/application-ccd3cc87d5f63a3e28a2f20ec2ea3a97.css" />
           <link href="/avatar?size=128" rel="icon" type="image/png" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dancing Script" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway" />
@@ -79,13 +79,13 @@ http_interactions:
 
         <ul class="services">
           <li class="github">
-            <a href="https://github.com/alexistoulotte"><span>GitHub</span></a>
+            <a href="/github"><span>GitHub</span></a>
           </li>
           <li class="rubygems">
-            <a href="https://rubygems.org/profiles/alexistoulotte"><span>RubyGems</span></a>
+            <a href="/rubygems"><span>RubyGems</span></a>
           </li>
           <li class="cv">
-            <a href="https://dl.dropbox.com/u/5601946/CV.pdf"><span>CV</span></a>
+            <a href="/cv"><span>CV</span></a>
           </li>
           <li class="email">
             <a href="#"><span>Email</span></a>
@@ -97,31 +97,22 @@ http_interactions:
             <a href="skype:alexistoulotte"><span>Skype</span></a>
           </li>
           <li class="twitter">
-            <a href="https://twitter.com/alexistoulotte"><span>Twitter</span></a>
+            <a href="/twitter"><span>Twitter</span></a>
           </li>
           <li class="facebook">
-            <a href="https://www.facebook.com/alexis.toulotte"><span>Facebook</span></a>
+            <a href="/facebook"><span>Facebook</span></a>
           </li>
-          <li class="linked-in">
-            <a href="https://www.linkedin.com/in/alexistoulotte"><span>LinkedIn</span></a>
+          <li class="linkedin">
+            <a href="/linkedin"><span>LinkedIn</span></a>
           </li>
           <li class="google-plus">
-            <a href="https://plus.google.com/111956742901852825014/posts"><span>Google+</span></a>
-          </li>
-          <li class="youtube">
-            <a href="https://www.youtube.com/alexistoulotte"><span>YouTube</span></a>
+            <a href="/google_plus"><span>Google+</span></a>
           </li>
           <li class="mixcloud">
-            <a href="https://www.mixcloud.com/alexistoulotte"><span>Mixcloud</span></a>
+            <a href="/mixcloud"><span>Mixcloud</span></a>
           </li>
-          <li class="last-fm">
-            <a href="http://www.lastfm.fr/user/alexistoulotte"><span>Last.fm</span></a>
-          </li>
-          <li class="sound-cloud">
-            <a href="https://soundcloud.com/alexistoulotte"><span>SoundCloud</span></a>
-          </li>
-          <li class="delicious">
-            <a href="https://delicious.com/alexistoulotte"><span>Delicious</span></a>
+          <li class="lastfm">
+            <a href="/lastfm"><span>Last.fm</span></a>
           </li>
         </ul>
 
@@ -130,5 +121,5 @@ http_interactions:
 
         </html>
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 22:42:22 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 19 Aug 2015 01:03:30 GMT
+recorded_with: VCR 2.9.3
