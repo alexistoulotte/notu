@@ -53,7 +53,7 @@ describe Notu::LovedTracks, :vcr do
   describe '#pages_count' do
 
     it 'is correct' do
-      expect(loved_tracks.send(:pages_count)).to be_within(10).of(30)
+      expect(loved_tracks.pages_count).to be_within(10).of(30)
     end
 
   end

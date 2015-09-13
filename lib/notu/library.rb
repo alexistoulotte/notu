@@ -20,6 +20,10 @@ module Notu
       MostPlayedTracks.new(self, options)
     end
 
+    def played_tracks
+      PlayedTracks.new(self)
+    end
+
     def url(options = {})
       options = options.stringify_keys
       path = options['path'].presence

@@ -46,6 +46,14 @@ describe Notu::Library do
 
   end
 
+  describe '#played_tracks' do
+
+    it 'returns a PlayedTrack object' do
+      expect(library.played_tracks).to be_a(Notu::PlayedTracks)
+    end
+
+  end
+
   describe '#username' do
 
     it 'is username set at initialization' do
