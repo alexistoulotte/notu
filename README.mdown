@@ -1,6 +1,6 @@
 # Kagu
 
-API to get Last.fm most played and loved tracks.
+API to get Last.fm tracks (most played, loved, etc.).
 
 ## Installation
 
@@ -23,6 +23,10 @@ end
 
 library.most_played_tracks(period: 'last_month').each do |track|
   puts "#{track.artist}: #{track.plays_count}"
+end
+
+library.played_tracks.each do |track|
+  puts track.title
 end
 ```
 
