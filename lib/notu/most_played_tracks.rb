@@ -2,7 +2,6 @@ module Notu
 
   class MostPlayedTracks
 
-    include Enumerable
     include Listing
 
     PERIODS = {

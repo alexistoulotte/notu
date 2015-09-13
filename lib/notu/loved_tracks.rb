@@ -2,7 +2,6 @@ module Notu
 
   class LovedTracks
 
-    include Enumerable
     include Listing
 
     def each(&block)

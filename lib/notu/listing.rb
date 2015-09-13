@@ -2,6 +2,8 @@ module Notu
 
   module Listing
 
+    include Enumerable
+
     attr_reader :library
 
     def initialize(library)
