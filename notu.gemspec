@@ -16,12 +16,12 @@ Gem::Specification.new do |s|
   s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 
-  s.add_dependency 'activesupport', '>= 4.1.0', '< 4.3.0'
+  s.add_dependency 'activesupport', '>= 4.1.0', '< 5.1.0'
   s.add_dependency 'nokogiri', '>= 1.6.0', '< 1.7.0'
 
-  s.add_development_dependency 'byebug', '>= 3.2.0', '< 7.0.0'
-  s.add_development_dependency 'rake', '>= 10.3.0', '< 10.5.0'
-  s.add_development_dependency 'rspec', '>= 3.1.0', '< 3.4.0'
-  s.add_development_dependency 'vcr', '>= 2.9.0', '< 2.10.0'
-  s.add_development_dependency 'webmock', '>= 1.18.0', '< 1.21.0'
+  s.add_development_dependency 'byebug', '>= 3.2.0', '< 10.0.0'
+  s.add_development_dependency 'rake', '>= 10.3.0', '< 12.0.0'
+  s.add_development_dependency 'rspec', '>= 3.1.0', '< 3.6.0'
+  s.add_development_dependency 'vcr', '>= 2.9.0', '< 3.1.0'
+  s.add_development_dependency 'webmock', '>= 1.18.0', '< 2.2.0'
 end
