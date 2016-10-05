@@ -1,4 +1,4 @@
-# Kagu
+# Notu
 
 API to get Last.fm tracks (most played, loved, etc.).
 
