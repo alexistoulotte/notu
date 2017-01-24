@@ -4,7 +4,8 @@ module Notu
 
     def self.get(url, options = {})
       uri = url.is_a?(URI) ? url : URI.parse(url)
-      raise "Invalid URL: #{url.inspect}" unless uri.is_a?(URI::HTTP)
+      raise Error.new("Invalid URL: #{url.inspect}") unless uri.is_a?(URI::HTTP)
+      Notu.logger.debug('Notu') { "GET #{url}" }
       options.reverse_merge!(max_redirects: 10, timeout: 10, max_retries: 3, retry_sleep: 2)
       connection = Net::HTTP.new(uri.host, uri.port)
       connection.open_timeout = options[:timeout]
@@ -18,7 +19,7 @@ module Notu
           begin
             response.value # raise if not success
           rescue Net::HTTPRetriableError
-            raise 'Max redirects has been reached' if options[:max_redirects] < 1
+            raise NetworkError.new('Max redirects has been reached') if options[:max_redirects] < 1
             options[:max_redirects] -= 1
             return get(response['Location'], options)
           end

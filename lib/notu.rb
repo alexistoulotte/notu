@@ -7,6 +7,13 @@ require 'nokogiri'
 
 lib_path = "#{__dir__}/notu"
 
+module Notu
+
+  mattr_accessor :logger
+  self.logger = Logger.new(nil)
+
+end
+
 require "#{lib_path}/error"
 require "#{lib_path}/network_error"
 require "#{lib_path}/parse_error"
