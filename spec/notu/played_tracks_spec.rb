@@ -30,8 +30,8 @@ describe Notu::PlayedTracks, :vcr do
     it 'is correct' do
       urls = played_tracks.page_urls
       expect(urls.size).to eq(played_tracks.pages_count)
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/library?page=12')
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/library?page=3')
+      expect(urls).to include('https://www.last.fm/user/alexistoulotte/library?page=12')
+      expect(urls).to include('https://www.last.fm/user/alexistoulotte/library?page=3')
     end
 
   end

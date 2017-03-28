@@ -44,8 +44,8 @@ describe Notu::LovedTracks, :vcr do
     it 'is correct' do
       urls = loved_tracks.page_urls
       expect(urls.size).to eq(loved_tracks.pages_count)
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/loved?page=12')
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/loved?page=3')
+      expect(urls).to include('https://www.last.fm/user/alexistoulotte/loved?page=12')
+      expect(urls).to include('https://www.last.fm/user/alexistoulotte/loved?page=3')
     end
 
   end

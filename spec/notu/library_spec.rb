@@ -105,32 +105,32 @@ describe Notu::Library do
   describe '#url' do
 
     it 'returns default url if path not given' do
-      expect(library.url).to eq('http://www.last.fm/user/alexistoulotte')
+      expect(library.url).to eq('https://www.last.fm/user/alexistoulotte')
     end
 
     it 'returns default url if path is blank' do
-      expect(library.url(path: ' ')).to eq('http://www.last.fm/user/alexistoulotte')
+      expect(library.url(path: ' ')).to eq('https://www.last.fm/user/alexistoulotte')
     end
 
     it 'accepts path option as string' do
-      expect(library.url('path' => '/library/loved')).to eq('http://www.last.fm/user/alexistoulotte/library/loved')
+      expect(library.url('path' => '/library/loved')).to eq('https://www.last.fm/user/alexistoulotte/library/loved')
     end
 
     it 'returns URL and path if given' do
-      expect(library.url(path: '/library/loved')).to eq('http://www.last.fm/user/alexistoulotte/library/loved')
+      expect(library.url(path: '/library/loved')).to eq('https://www.last.fm/user/alexistoulotte/library/loved')
     end
 
     it 'adds first / to given path' do
-      expect(library.url(path: 'library/loved')).to eq('http://www.last.fm/user/alexistoulotte/library/loved')
+      expect(library.url(path: 'library/loved')).to eq('https://www.last.fm/user/alexistoulotte/library/loved')
     end
 
     it 'use :host option set at initialization' do
       library = Notu::Library.new(host: 'www.lastfm.fr', username: 'albundy02')
-      expect(library.url).to eq('http://www.lastfm.fr/user/albundy02')
+      expect(library.url).to eq('https://www.lastfm.fr/user/albundy02')
     end
 
     it 'accepts query option' do
-      expect(library.url(query: { bar: 42, 'baz' => 'hello&world' })).to eq('http://www.last.fm/user/alexistoulotte?bar=42&baz=hello%26world')
+      expect(library.url(query: { bar: 42, 'baz' => 'hello&world' })).to eq('https://www.last.fm/user/alexistoulotte?bar=42&baz=hello%26world')
     end
 
   end

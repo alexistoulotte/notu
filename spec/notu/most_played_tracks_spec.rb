@@ -45,8 +45,8 @@ describe Notu::MostPlayedTracks, :vcr do
       allow(most_played_tracks).to receive(:period).and_return('365 days')
       urls = most_played_tracks.page_urls
       expect(urls.size).to eq(most_played_tracks.pages_count)
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/library/tracks?date_preset=LAST_365_DAYS&page=5')
-      expect(urls).to include('http://www.last.fm/user/alexistoulotte/library/tracks?date_preset=LAST_365_DAYS&page=2')
+      expect(urls).to include('https://www.last.fm/user/alexistoulotte/library/tracks?date_preset=LAST_365_DAYS&page=5')
+      expect(urls).to include('https://www.last.fm/user/alexistoulotte/library/tracks?date_preset=LAST_365_DAYS&page=2')
     end
 
   end

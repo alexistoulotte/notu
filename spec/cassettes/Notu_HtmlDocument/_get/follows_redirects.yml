@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -19,15 +19,13 @@ http_interactions:
       message: Moved Permanently
     headers:
       Date:
-      - Wed, 19 Aug 2015 01:03:26 GMT
+      - Tue, 28 Mar 2017 02:03:45 GMT
       Server:
-      - Apache/2.2.16 (Debian)
+      - Apache/2.4.10 (Debian)
       Location:
       - http://alweb.org/
-      Vary:
-      - Accept-Encoding
       Content-Length:
-      - '241'
+      - '304'
       Content-Type:
       - text/html; charset=iso-8859-1
     body:
@@ -40,10 +38,10 @@ http_interactions:
         <h1>Moved Permanently</h1>
         <p>The document has moved <a href="http://alweb.org/">here</a>.</p>
         <hr>
-        <address>Apache/2.2.16 (Debian) Server at www.alweb.org Port 80</address>
+        <address>Apache/2.4.10 (Debian) Server at www.alweb.org Port 80</address>
         </body></html>
     http_version: 
-  recorded_at: Wed, 19 Aug 2015 01:03:26 GMT
+  recorded_at: Tue, 28 Mar 2017 02:03:45 GMT
 - request:
     method: get
     uri: http://alweb.org/
@@ -54,7 +52,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -63,31 +61,31 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 19 Aug 2015 01:03:27 GMT
+      - Tue, 28 Mar 2017 02:03:46 GMT
       Server:
-      - Apache/2.2.16 (Debian)
+      - Apache/2.4.10 (Debian)
+      Cache-Control:
+      - public
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      Etag:
-      - '"17883192c98ca0216d45df6579fc74e5"'
-      Cache-Control:
-      - public
-      X-Request-Id:
-      - 7755283b-c2d8-4431-94ad-881df833cf2b
       X-Runtime:
-      - '0.006922'
+      - '0.005798'
+      X-Request-Id:
+      - a15540df-ddf3-4625-865f-4f96578dcbbe
       X-Powered-By:
-      - Phusion Passenger 4.0.53
+      - Phusion Passenger 5.1.2
+      Etag:
+      - W/"1d6c9f54213353228bf5a314864dae98-gzip"
       Status:
       - 200 OK
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '787'
+      - '835'
       Content-Type:
       - text/html; charset=utf-8
     body:
@@ -110,8 +108,8 @@ http_interactions:
           <meta name="DC.creator" content="Alexis Toulotte" />
           <meta name="DC.description" content="Page personnelle d'Alexis Toulotte." />
           <meta name="google-site-verification" content="1dodRvC0Zp-iAZilnTeT5PaY4bPKHwSzs9994-3g304" />
-          <script src="/assets/application-eae74a30b96601b52819de1d8f7920d7.js"></script>
-          <link rel="stylesheet" media="screen" href="/assets/application-ccd3cc87d5f63a3e28a2f20ec2ea3a97.css" />
+          <script src="/assets/application-c8b319b8094a109a741beabe9d1816cc0fc0433c6ea327ed8924d1f35f0feef8.js"></script>
+          <link rel="stylesheet" media="screen" href="/assets/application-4b8e4dcf313c48276cec891d1573b606aa89f12e34e7117d93579d95ea6e3d89.css" />
           <link href="/avatar?size=128" rel="icon" type="image/png" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dancing Script" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway" />
@@ -165,5 +163,5 @@ http_interactions:
 
         </html>
     http_version: 
-  recorded_at: Wed, 19 Aug 2015 01:03:27 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Tue, 28 Mar 2017 02:03:46 GMT
+recorded_with: VCR 3.0.3

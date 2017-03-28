@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -19,40 +19,36 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Wed, 19 Aug 2015 01:03:28 GMT
+      - Tue, 28 Mar 2017 02:03:41 GMT
       Server:
-      - Apache/2.2.16 (Debian)
+      - Apache/2.4.10 (Debian)
+      Cache-Control:
+      - no-cache
+      X-Runtime:
+      - '0.003862'
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      Etag:
-      - '"fcc9c11bad7747937dfc96cd94e35bca"'
-      Cache-Control:
-      - public
       X-Request-Id:
-      - 8b9c16a1-d4b1-4634-8b62-2781713921f7
-      X-Runtime:
-      - '0.003552'
+      - e3243aab-5674-410d-aca1-1483beae699d
       X-Powered-By:
-      - Phusion Passenger 4.0.53
+      - Phusion Passenger 5.1.2
       Location:
       - http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042
       Status:
       - 302 Found
-      Vary:
-      - Accept-Encoding
-      Content-Length:
-      - '129'
+      Transfer-Encoding:
+      - chunked
       Content-Type:
       - text/html; charset=utf-8
     body:
       encoding: UTF-8
       string: <html><body>You are being <a href="http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Wed, 19 Aug 2015 01:03:28 GMT
+  recorded_at: Tue, 28 Mar 2017 02:03:42 GMT
 - request:
     method: get
     uri: http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042
@@ -63,7 +59,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - '*/*'
       User-Agent:
       - Ruby
   response:
@@ -71,36 +67,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - nginx
       Date:
-      - Wed, 19 Aug 2015 00:59:59 GMT
-      Last-Modified:
-      - Thu, 24 Jan 2013 00:31:59 GMT
-      Connection:
-      - Keep-Alive
-      Cache-Control:
-      - max-age=300
-      Age:
-      - '210'
-      Accept-Ranges:
-      - bytes
-      Access-Control-Allow-Origin:
-      - "*"
-      Content-Disposition:
-      - inline; filename="c090d5749bd9877588ac8563e0817042.png"
+      - Tue, 28 Mar 2017 02:03:43 GMT
       Content-Type:
       - image/png
-      Expires:
-      - Wed, 19 Aug 2015 01:04:59 GMT
-      Link:
-      - <http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042>; rel="canonical"
-      Server:
-      - ECS (syd/EBA1)
-      Source-Age:
-      - '0'
-      X-Varnish:
-      - '429679271'
       Content-Length:
       - '11789'
+      Connection:
+      - keep-alive
+      Last-Modified:
+      - Thu, 24 Jan 2013 00:31:59 GMT
+      Link:
+      - <https://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042>; rel="canonical"
+      Content-Disposition:
+      - inline; filename="c090d5749bd9877588ac8563e0817042.png"
+      Access-Control-Allow-Origin:
+      - '*'
+      X-Nc:
+      - MISS syd 1
+      Accept-Ranges:
+      - bytes
+      Expires:
+      - Tue, 28 Mar 2017 02:08:43 GMT
+      Cache-Control:
+      - max-age=300
+      Source-Age:
+      - '0'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -367,5 +361,5 @@ http_interactions:
         0nq4U7qFDsaylSsypzHmjP5Aa8QrNs33AowZ7kMMtcj/Kwwzi4jsmgCKY16w
         HkbsMQmjmC6gSeNGLyXZEkoxlIaZ8f8Dl9VUi97Go/gAAAAASUVORK5CYII=
     http_version: 
-  recorded_at: Wed, 19 Aug 2015 01:03:29 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Tue, 28 Mar 2017 02:03:43 GMT
+recorded_with: VCR 3.0.3

@@ -29,7 +29,7 @@ module Notu
       path = options['path'].presence
       query = options['query'].presence
       query = options['query'].map { |name, value| "#{CGI.escape(name.to_s)}=#{CGI.escape(value.to_s)}" }.join('&') if options['query'].is_a?(Hash)
-      "http://#{host}/user/#{username}".tap do |url|
+      "https://#{host}/user/#{username}".tap do |url|
         if path.present?
           url << '/' unless path.starts_with?('/')
           url << path
