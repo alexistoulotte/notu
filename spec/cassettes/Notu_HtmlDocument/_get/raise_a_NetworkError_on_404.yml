@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -19,13 +19,13 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Tue, 28 Mar 2017 02:03:43 GMT
+      - Sun, 06 Aug 2017 08:35:48 GMT
       Server:
       - Apache/2.4.10 (Debian)
       X-Runtime:
-      - '0.001316'
+      - '0.001310'
       X-Request-Id:
-      - e03643d3-ef3a-440e-aed6-e721df0bf2fa
+      - 1d297870-01e3-4bd9-8c8f-9e3a84d6516f
       X-Powered-By:
       - Phusion Passenger 5.1.2
       Content-Length:
@@ -33,7 +33,7 @@ http_interactions:
       Status:
       - 404 Not Found
       Content-Type:
-      - text/html; charset=utf-8
+      - text/html; charset=UTF-8
     body:
       encoding: UTF-8
       string: |
@@ -67,5 +67,5 @@ http_interactions:
 
         </html>
     http_version: 
-  recorded_at: Tue, 28 Mar 2017 02:03:44 GMT
+  recorded_at: Sun, 06 Aug 2017 08:35:47 GMT
 recorded_with: VCR 3.0.3

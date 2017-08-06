@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -19,13 +19,13 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Tue, 28 Mar 2017 02:03:41 GMT
+      - Sun, 06 Aug 2017 08:35:50 GMT
       Server:
       - Apache/2.4.10 (Debian)
       Cache-Control:
       - no-cache
       X-Runtime:
-      - '0.003862'
+      - '0.002667'
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -33,7 +33,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Request-Id:
-      - e3243aab-5674-410d-aca1-1483beae699d
+      - 2940f0da-cc1b-43b7-afc4-96aadcc5000f
       X-Powered-By:
       - Phusion Passenger 5.1.2
       Location:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: UTF-8
       string: <html><body>You are being <a href="http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Tue, 28 Mar 2017 02:03:42 GMT
+  recorded_at: Sun, 06 Aug 2017 08:35:50 GMT
 - request:
     method: get
     uri: http://www.gravatar.com/avatar/c090d5749bd9877588ac8563e0817042
@@ -59,7 +59,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -70,7 +70,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 28 Mar 2017 02:03:43 GMT
+      - Sun, 06 Aug 2017 08:35:50 GMT
       Content-Type:
       - image/png
       Content-Length:
@@ -84,17 +84,17 @@ http_interactions:
       Content-Disposition:
       - inline; filename="c090d5749bd9877588ac8563e0817042.png"
       Access-Control-Allow-Origin:
-      - '*'
+      - "*"
       X-Nc:
-      - MISS syd 1
+      - HIT syd 1
       Accept-Ranges:
       - bytes
       Expires:
-      - Tue, 28 Mar 2017 02:08:43 GMT
+      - Sun, 06 Aug 2017 08:40:50 GMT
       Cache-Control:
       - max-age=300
       Source-Age:
-      - '0'
+      - '14500'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -361,5 +361,5 @@ http_interactions:
         0nq4U7qFDsaylSsypzHmjP5Aa8QrNs33AowZ7kMMtcj/Kwwzi4jsmgCKY16w
         HkbsMQmjmC6gSeNGLyXZEkoxlIaZ8f8Dl9VUi97Go/gAAAAASUVORK5CYII=
     http_version: 
-  recorded_at: Tue, 28 Mar 2017 02:03:43 GMT
+  recorded_at: Sun, 06 Aug 2017 08:35:51 GMT
 recorded_with: VCR 3.0.3

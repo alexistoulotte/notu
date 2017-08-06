@@ -19,7 +19,7 @@ module Notu
 
     def pages_count
       document = HtmlDocument.get(library.url(path: path, query: params))
-      [1, (document/'ul.pagination li.pages').text.split(/\s+/).map(&:to_i)].flatten.compact.max
+      [1, (document/'ul.pagination-list li.pagination-page').text.split(/\s+/).map(&:to_i)].flatten.compact.max
     end
 
     def params

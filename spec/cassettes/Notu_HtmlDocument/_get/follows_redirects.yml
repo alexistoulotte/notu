@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -19,7 +19,7 @@ http_interactions:
       message: Moved Permanently
     headers:
       Date:
-      - Tue, 28 Mar 2017 02:03:45 GMT
+      - Sun, 06 Aug 2017 08:35:53 GMT
       Server:
       - Apache/2.4.10 (Debian)
       Location:
@@ -41,7 +41,7 @@ http_interactions:
         <address>Apache/2.4.10 (Debian) Server at www.alweb.org Port 80</address>
         </body></html>
     http_version: 
-  recorded_at: Tue, 28 Mar 2017 02:03:45 GMT
+  recorded_at: Sun, 06 Aug 2017 08:35:53 GMT
 - request:
     method: get
     uri: http://alweb.org/
@@ -52,7 +52,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -61,7 +61,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Mar 2017 02:03:46 GMT
+      - Sun, 06 Aug 2017 08:35:55 GMT
       Server:
       - Apache/2.4.10 (Debian)
       Cache-Control:
@@ -73,23 +73,23 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.005798'
+      - '0.005942'
       X-Request-Id:
-      - a15540df-ddf3-4625-865f-4f96578dcbbe
+      - 85e4fe54-dfeb-4ce7-b239-2457098ecfde
       X-Powered-By:
       - Phusion Passenger 5.1.2
       Etag:
-      - W/"1d6c9f54213353228bf5a314864dae98-gzip"
+      - W/"83e73a430b80703d7295dbbba89c9448-gzip"
       Status:
       - 200 OK
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '835'
+      - '836'
       Content-Type:
       - text/html; charset=utf-8
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |
         <!DOCTYPE html>
 
@@ -108,8 +108,8 @@ http_interactions:
           <meta name="DC.creator" content="Alexis Toulotte" />
           <meta name="DC.description" content="Page personnelle d'Alexis Toulotte." />
           <meta name="google-site-verification" content="1dodRvC0Zp-iAZilnTeT5PaY4bPKHwSzs9994-3g304" />
-          <script src="/assets/application-c8b319b8094a109a741beabe9d1816cc0fc0433c6ea327ed8924d1f35f0feef8.js"></script>
-          <link rel="stylesheet" media="screen" href="/assets/application-4b8e4dcf313c48276cec891d1573b606aa89f12e34e7117d93579d95ea6e3d89.css" />
+          <script src="/assets/application-8c8045af6fe0cd6ee2993a56c087afe4b954d5b1b30651a3401b7af8eb8aa557.js"></script>
+          <link rel="stylesheet" media="screen" href="/assets/application-7a3bbb9826c2faa4f27e776a8f4349d08bd604910ddef0b90a4c3e11bc011898.css" />
           <link href="/avatar?size=128" rel="icon" type="image/png" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dancing Script" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway" />
@@ -163,5 +163,5 @@ http_interactions:
 
         </html>
     http_version: 
-  recorded_at: Tue, 28 Mar 2017 02:03:46 GMT
+  recorded_at: Sun, 06 Aug 2017 08:35:55 GMT
 recorded_with: VCR 3.0.3
