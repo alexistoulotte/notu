@@ -1,28 +1,8 @@
 require 'spec_helper'
 
-describe Notu::Library do
+describe Notu::Library, :vcr do
 
   let(:library) { Notu::Library.new(username: 'alexistoulotte') }
-
-  describe '#host' do
-
-    it 'is "www.last.fm" by default' do
-      expect(library.host).to eq('www.last.fm')
-    end
-
-    it 'can be specified via option' do
-      expect(Notu::Library.new(host: 'www.lastfm.fr', username: 'alex').host).to eq('www.lastfm.fr')
-    end
-
-    it 'can be specified via option (as string)' do
-      expect(Notu::Library.new('host' => 'www.lastfm.fr', username: 'alex').host).to eq('www.lastfm.fr')
-    end
-
-    it 'is default host if blank' do
-      expect(Notu::Library.new(host: ' ', username: 'alex').host).to eq('www.last.fm')
-    end
-
-  end
 
   describe '#loved_tracks' do
 
@@ -67,37 +47,43 @@ describe Notu::Library do
     it 'raise an error if nil' do
       expect {
         Notu::Library.new(username: nil)
-      }.to raise_error(Notu::Error, 'Invalid Last.fm username: nil')
+      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: nil')
     end
 
     it 'raise an error if blank' do
       expect {
         Notu::Library.new(username: ' ')
-      }.to raise_error(Notu::Error, 'Invalid Last.fm username: " "')
+      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: " "')
     end
 
     it 'raise an error if it contains spaces' do
       expect {
         Notu::Library.new(username: 'alexis toulotte')
-      }.to raise_error(Notu::Error, 'Invalid Last.fm username: "alexis toulotte"')
+      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "alexis toulotte"')
     end
 
     it 'raise an error if invalid' do
       expect {
         Notu::Library.new(username: 'alex$')
-      }.to raise_error(Notu::Error, 'Invalid Last.fm username: "alex$"')
+      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "alex$"')
 
       expect {
         Notu::Library.new(username: 'ALex^')
-      }.to raise_error(Notu::Error, 'Invalid Last.fm username: "ALex^"')
+      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "ALex^"')
     end
 
     it 'is stripped' do
-      expect(Notu::Library.new(username: " alexis42 \n").username).to eq('alexis42')
+      expect(Notu::Library.new(username: " alexistoulotte \n").username).to eq('alexistoulotte')
     end
 
     it 'is downcased' do
       expect(Notu::Library.new(username: 'AlexIsT').username).to eq('alexist')
+    end
+
+    it 'raise an error if it does not exist' do
+      expect {
+        Notu::Library.new(username: 'jognjjeqwk')
+      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "jognjjeqwk"')
     end
 
   end
@@ -122,11 +108,6 @@ describe Notu::Library do
 
     it 'adds first / to given path' do
       expect(library.url(path: 'library/loved')).to eq('https://www.last.fm/user/alexistoulotte/library/loved')
-    end
-
-    it 'use :host option set at initialization' do
-      library = Notu::Library.new(host: 'www.lastfm.fr', username: 'albundy02')
-      expect(library.url).to eq('https://www.lastfm.fr/user/albundy02')
     end
 
     it 'accepts query option' do

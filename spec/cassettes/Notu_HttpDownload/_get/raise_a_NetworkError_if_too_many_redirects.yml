@@ -19,7 +19,7 @@ http_interactions:
       message: Moved Permanently
     headers:
       Date:
-      - Sun, 06 Aug 2017 08:36:40 GMT
+      - Thu, 04 Jan 2018 04:06:08 GMT
       Server:
       - Apache/2.4.10 (Debian)
       Location:
@@ -41,5 +41,5 @@ http_interactions:
         <address>Apache/2.4.10 (Debian) Server at www.alweb.org Port 80</address>
         </body></html>
     http_version: 
-  recorded_at: Sun, 06 Aug 2017 08:36:40 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 04 Jan 2018 04:06:08 GMT
+recorded_with: VCR 4.0.0

@@ -2,14 +2,13 @@ module Notu
 
   class Library
 
-    DEFAULT_HOST = 'www.last.fm'
+    HOST = 'www.last.fm'.freeze
 
-    attr_reader :host, :username
+    attr_reader :username
 
     def initialize(options = {})
-      options = options.stringify_keys
-      self.host = options['host']
-      self.username = options['username']
+      options = options.symbolize_keys
+      self.username = options[:username]
     end
 
     def loved_tracks
@@ -25,11 +24,11 @@ module Notu
     end
 
     def url(options = {})
-      options = options.stringify_keys
-      path = options['path'].presence
-      query = options['query'].presence
-      query = options['query'].map { |name, value| "#{CGI.escape(name.to_s)}=#{CGI.escape(value.to_s)}" }.join('&') if options['query'].is_a?(Hash)
-      "https://#{host}/user/#{username}".tap do |url|
+      options = options.symbolize_keys
+      path = options[:path].presence
+      query = options[:query].presence
+      query = options[:query].map { |name, value| "#{CGI.escape(name.to_s)}=#{CGI.escape(value.to_s)}" }.join('&') if options[:query].is_a?(Hash)
+      "https://#{HOST}/user/#{username}".tap do |url|
         if path.present?
           url << '/' unless path.starts_with?('/')
           url << path
@@ -42,13 +41,14 @@ module Notu
 
     private
 
-    def host=(value)
-      @host = value.presence || DEFAULT_HOST
-    end
-
     def username=(value)
       @username = value.to_s.strip.downcase
-      raise Error.new("Invalid Last.fm username: #{value.inspect}") if username !~ /^[a-z0-9_]+$/
+      raise UnknownUsernameError.new(value) if username !~ /^[a-z0-9_]+$/
+      begin
+        HtmlDocument.get(url)
+      rescue
+        raise UnknownUsernameError.new(value)
+      end
     end
 
   end

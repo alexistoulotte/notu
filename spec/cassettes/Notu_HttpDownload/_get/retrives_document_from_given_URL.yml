@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 06 Aug 2017 08:36:38 GMT
+      - Thu, 04 Jan 2018 04:06:09 GMT
       Server:
       - Apache/2.4.10 (Debian)
       Cache-Control:
@@ -31,19 +31,19 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Runtime:
-      - '0.005903'
+      - '0.005898'
       X-Request-Id:
-      - 74ef6ca0-d62b-4d2c-9575-9e3014881b6e
+      - c059943e-9f58-48e3-811f-12e17d825763
       X-Powered-By:
       - Phusion Passenger 5.1.2
       Etag:
-      - W/"83e73a430b80703d7295dbbba89c9448-gzip"
+      - W/"17d29af489a2ed288f8cd3a10b4f3c2f-gzip"
       Status:
       - 200 OK
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '836'
+      - '837'
       Content-Type:
       - text/html; charset=utf-8
     body:
@@ -66,8 +66,8 @@ http_interactions:
           <meta name="DC.creator" content="Alexis Toulotte" />
           <meta name="DC.description" content="Page personnelle d'Alexis Toulotte." />
           <meta name="google-site-verification" content="1dodRvC0Zp-iAZilnTeT5PaY4bPKHwSzs9994-3g304" />
-          <script src="/assets/application-8c8045af6fe0cd6ee2993a56c087afe4b954d5b1b30651a3401b7af8eb8aa557.js"></script>
-          <link rel="stylesheet" media="screen" href="/assets/application-7a3bbb9826c2faa4f27e776a8f4349d08bd604910ddef0b90a4c3e11bc011898.css" />
+          <script src="/assets/application-9912e0fa65c26bc08df0f3f5ea37aa1f77136b8660a88fbe114572ea604e6262.js"></script>
+          <link rel="stylesheet" media="screen" href="/assets/application-d77c25a7b1b5f7b83f716821e3f4f22b159a081d8e865ed475484f2889b21f35.css" />
           <link href="/avatar?size=128" rel="icon" type="image/png" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dancing Script" />
           <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway" />
@@ -121,5 +121,5 @@ http_interactions:
 
         </html>
     http_version: 
-  recorded_at: Sun, 06 Aug 2017 08:36:38 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 04 Jan 2018 04:06:09 GMT
+recorded_with: VCR 4.0.0

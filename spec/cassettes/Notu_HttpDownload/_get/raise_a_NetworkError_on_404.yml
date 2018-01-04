@@ -19,13 +19,13 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Sun, 06 Aug 2017 08:36:47 GMT
+      - Thu, 04 Jan 2018 04:06:08 GMT
       Server:
       - Apache/2.4.10 (Debian)
       X-Runtime:
-      - '0.001337'
+      - '0.001296'
       X-Request-Id:
-      - 99665738-f23f-452c-b2ae-201db96b69d4
+      - 491e7dc6-aa62-4b7f-aa3f-02f7c32159b0
       X-Powered-By:
       - Phusion Passenger 5.1.2
       Content-Length:
@@ -67,5 +67,5 @@ http_interactions:
 
         </html>
     http_version: 
-  recorded_at: Sun, 06 Aug 2017 08:36:47 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 04 Jan 2018 04:06:08 GMT
+recorded_with: VCR 4.0.0
