@@ -16,11 +16,11 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.0.0'
 
   s.add_dependency 'activesupport', '>= 4.1.0', '< 6.0.0'
-  s.add_dependency 'nokogiri', '>= 1.6.0', '< 1.9.0'
+  s.add_dependency 'nokogiri', '>= 1.6.0', '< 1.11.0'
 
-  s.add_development_dependency 'byebug', '>= 3.2.0', '< 11.0.0'
+  s.add_development_dependency 'byebug', '>= 3.2.0', '< 12.0.0'
   s.add_development_dependency 'rake', '>= 10.3.0', '< 13.0.0'
   s.add_development_dependency 'rspec', '>= 3.1.0', '< 4.0.0'
-  s.add_development_dependency 'vcr', '>= 4.0.0', '< 5.0.0'
+  s.add_development_dependency 'vcr', '>= 4.0.0', '< 6.0.0'
   s.add_development_dependency 'webmock', '>= 3.0.0', '< 4.0.0'
 end

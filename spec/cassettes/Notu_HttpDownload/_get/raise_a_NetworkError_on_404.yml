@@ -15,57 +15,131 @@ http_interactions:
       - Ruby
   response:
     status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Fri, 12 Jul 2019 08:27:55 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '185'
+      Connection:
+      - keep-alive
+      Location:
+      - https://alweb.org/foo
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/1.10.3</center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Fri, 12 Jul 2019 08:27:56 GMT
+- request:
+    method: get
+    uri: https://alweb.org/foo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
       code: 404
       message: Not Found
     headers:
-      Date:
-      - Thu, 04 Jan 2018 04:06:08 GMT
       Server:
-      - Apache/2.4.10 (Debian)
-      X-Runtime:
-      - '0.001296'
-      X-Request-Id:
-      - 491e7dc6-aa62-4b7f-aa3f-02f7c32159b0
-      X-Powered-By:
-      - Phusion Passenger 5.1.2
-      Content-Length:
-      - '495'
-      Status:
-      - 404 Not Found
+      - nginx/1.10.3
+      Date:
+      - Fri, 12 Jul 2019 08:27:57 GMT
       Content-Type:
-      - text/html; charset=UTF-8
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Etag:
+      - W/"5a6d335f-1fe8"
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |
         <!DOCTYPE html>
 
         <html>
 
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <title>Error! - Not Found</title>
-            <link href="/errors/style.css" media="screen" rel="stylesheet" type="text/css" />
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <title>Error! - Not Found</title>
+          <style type="text/css">
+            * {
+              margin: 0;
+              padding: 0;
+            }
+
+            body {
+              background: repeat top left url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAECAIAAAA8r+mnAAAAPUlEQVQImW3MoQ0AMAhE0WvSE+DYfytWYAEUCExFk6p+9dRf7o5f28wAkJyZB5I7MwGISHdfVJWqroj4rg4BzxRXyJagewAAAABJRU5ErkJggg==");
+              color: #333;
+              font-family: "Verdana", sans-serif;
+              font-size: 80%;
+              text-align: center;
+            }
+
+            div {
+              background: #f6f6f6;
+              border: 1px solid #aaa;
+              margin: 10% auto 0;
+              width: 35em;
+            }
+
+            h1 {
+              display: none;
+            }
+
+            h2 {
+              background: no-repeat 10px center url("data:image/png;base64,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");
+              background-size: 32px;
+              border-bottom: 1px solid #aaa;
+              border-top: 2px solid #c00;
+              color: #c00;
+              font-size: 150%;
+              font-weight: bold;
+              margin-bottom: 0.5em;
+              padding: 12px 0.5em 12px 52px;
+              text-align: right;
+            }
+
+            p {
+              line-height: 1.5em;
+              padding: 0.8em 1.2em;
+            }
+          </style>
         </head>
 
         <body>
 
-        <div>
+          <div>
             <h1>Error!</h1>
 
             <h2>Not Found</h2>
 
             <p class="first">
-                The page you were looking for doesn't exist.
+              The page you were looking for doesn't exist.
             </p>
 
             <p>
-                You may have mistyped the address or the page may have moved.
+              You may have mistyped the address or the page may have moved.
             </p>
-        </div>
+          </div>
 
         </body>
 
         </html>
     http_version: 
-  recorded_at: Thu, 04 Jan 2018 04:06:08 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Fri, 12 Jul 2019 08:27:57 GMT
+recorded_with: VCR 5.0.0

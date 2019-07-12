@@ -18,33 +18,63 @@ http_interactions:
       code: 301
       message: Moved Permanently
     headers:
-      Date:
-      - Thu, 04 Jan 2018 04:06:10 GMT
       Server:
-      - Apache/2.4.10 (Debian)
-      Location:
-      - http://alweb.org/
-      Content-Length:
-      - '304'
+      - nginx/1.10.3
+      Date:
+      - Fri, 12 Jul 2019 08:27:51 GMT
       Content-Type:
-      - text/html; charset=iso-8859-1
+      - text/html
+      Content-Length:
+      - '185'
+      Connection:
+      - keep-alive
+      Location:
+      - https://www.alweb.org/
     body:
       encoding: UTF-8
-      string: |
-        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-        <html><head>
-        <title>301 Moved Permanently</title>
-        </head><body>
-        <h1>Moved Permanently</h1>
-        <p>The document has moved <a href="http://alweb.org/">here</a>.</p>
-        <hr>
-        <address>Apache/2.4.10 (Debian) Server at www.alweb.org Port 80</address>
-        </body></html>
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/1.10.3</center>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Thu, 04 Jan 2018 04:06:10 GMT
+  recorded_at: Fri, 12 Jul 2019 08:27:51 GMT
 - request:
     method: get
-    uri: http://alweb.org/
+    uri: https://www.alweb.org/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - nginx/1.10.3
+      Date:
+      - Fri, 12 Jul 2019 08:27:53 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '185'
+      Connection:
+      - keep-alive
+      Location:
+      - https://alweb.org/
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/1.10.3</center>\r\n</body>\r\n</html>\r\n"
+    http_version: 
+  recorded_at: Fri, 12 Jul 2019 08:27:53 GMT
+- request:
+    method: get
+    uri: https://alweb.org/
     body:
       encoding: US-ASCII
       string: ''
@@ -60,40 +90,29 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Thu, 04 Jan 2018 04:06:11 GMT
       Server:
-      - Apache/2.4.10 (Debian)
-      Cache-Control:
-      - public
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Runtime:
-      - '0.005943'
-      X-Request-Id:
-      - 86c402bd-8d9a-4b4d-9c7a-775fa4eaf2ec
-      X-Powered-By:
-      - Phusion Passenger 5.1.2
-      Etag:
-      - W/"17d29af489a2ed288f8cd3a10b4f3c2f-gzip"
-      Status:
-      - 200 OK
-      Vary:
-      - Accept-Encoding
-      Content-Length:
-      - '837'
+      - nginx/1.10.3
+      Date:
+      - Fri, 12 Jul 2019 08:27:55 GMT
       Content-Type:
-      - text/html; charset=utf-8
+      - text/html
+      Last-Modified:
+      - Fri, 24 May 2019 05:30:41 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Etag:
+      - W/"5ce78181-3bd"
+      Expires:
+      - Fri, 12 Jul 2019 08:27:54 GMT
+      Cache-Control:
+      - no-cache
     body:
       encoding: ASCII-8BIT
       string: |
-        <!DOCTYPE html>
-
-        <html lang="fr">
+        <!doctype html>
+        <html>
 
         <head>
           <meta charset="utf-8" />
@@ -101,67 +120,18 @@ http_interactions:
           <meta name="author" content="Alexis Toulotte" />
           <meta name="description" content="Page personnelle d'Alexis Toulotte." />
           <meta name="robots" content="all" />
-          <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
-          <meta name="DC.format" content="text/html" />
-          <meta name="DC.language" content="fr" />
-          <meta name="DC.title" content="Alexis Toulotte" />
-          <meta name="DC.creator" content="Alexis Toulotte" />
-          <meta name="DC.description" content="Page personnelle d'Alexis Toulotte." />
           <meta name="google-site-verification" content="1dodRvC0Zp-iAZilnTeT5PaY4bPKHwSzs9994-3g304" />
-          <script src="/assets/application-9912e0fa65c26bc08df0f3f5ea37aa1f77136b8660a88fbe114572ea604e6262.js"></script>
-          <link rel="stylesheet" media="screen" href="/assets/application-d77c25a7b1b5f7b83f716821e3f4f22b159a081d8e865ed475484f2889b21f35.css" />
-          <link href="/avatar?size=128" rel="icon" type="image/png" />
-          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dancing Script" />
-          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway" />
-        </head>
+          <base href="/" />
+          <link href="//alweb.org/avatar?size=128" rel="apple-touch-icon" type="image/png">
+          <link href="//alweb.org/avatar?size=128" rel="icon" type="image/png" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles.377f754abddfebc030f2.css"></head>
 
         <body>
-
-          <h1>Alexis Toulotte</h1>
-
-        <ul class="services">
-          <li class="github">
-            <a href="/github"><span>GitHub</span></a>
-          </li>
-          <li class="rubygems">
-            <a href="/rubygems"><span>RubyGems</span></a>
-          </li>
-          <li class="cv">
-            <a href="/cv"><span>CV</span></a>
-          </li>
-          <li class="email">
-            <a href="#"><span>Email</span></a>
-          </li>
-          <li class="phone">
-            <a href="callto://+687817612"><span>+687 81 76 12</span></a>
-          </li>
-          <li class="skype">
-            <a href="skype:alexistoulotte"><span>Skype</span></a>
-          </li>
-          <li class="twitter">
-            <a href="/twitter"><span>Twitter</span></a>
-          </li>
-          <li class="facebook">
-            <a href="/facebook"><span>Facebook</span></a>
-          </li>
-          <li class="linkedin">
-            <a href="/linkedin"><span>LinkedIn</span></a>
-          </li>
-          <li class="google-plus">
-            <a href="/google_plus"><span>Google+</span></a>
-          </li>
-          <li class="mixcloud">
-            <a href="/mixcloud"><span>Mixcloud</span></a>
-          </li>
-          <li class="lastfm">
-            <a href="/lastfm"><span>Last.fm</span></a>
-          </li>
-        </ul>
-
-
-        </body>
+          <app-root></app-root>
+        <script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="polyfills.59010f9e506ae304a4d7.js"></script><script type="text/javascript" src="main.4f49dfa1bdde1f316066.js"></script></body>
 
         </html>
     http_version: 
-  recorded_at: Thu, 04 Jan 2018 04:06:11 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Fri, 12 Jul 2019 08:27:55 GMT
+recorded_with: VCR 5.0.0
