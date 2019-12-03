@@ -7,6 +7,7 @@ module Notu
     attr_reader :username
 
     def initialize(options = {})
+      @semaphore = Mutex.new
       options = options.symbolize_keys
       self.username = options[:username]
     end
@@ -42,12 +43,14 @@ module Notu
     private
 
     def username=(value)
-      @username = value.to_s.strip.downcase
-      raise UnknownUsernameError.new(value) if username !~ /^[a-z0-9_]+$/
-      begin
-        HtmlDocument.get(url)
-      rescue
-        raise UnknownUsernameError.new(value)
+      @semaphore.synchronize do
+        @username = value.to_s.strip.downcase
+        raise UnknownUsernameError.new(value) if username !~ /^[a-z0-9_]+$/
+        begin
+          HtmlDocument.get(url)
+        rescue
+          raise UnknownUsernameError.new(value)
+        end
       end
     end
 
