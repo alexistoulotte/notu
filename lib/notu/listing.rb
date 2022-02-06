@@ -13,13 +13,13 @@ module Notu
 
     def page_urls
       (1..pages_count).map do |index|
-        library.url(path: path, query: params.merge('page' => index))
+        library.url(path:, query: params.merge('page' => index))
       end
     end
 
     def pages_count
-      document = HtmlDocument.get(library.url(path: path, query: params))
-      [1, (document/'ul.pagination-list li.pagination-page').text.split(/\s+/).map(&:to_i)].flatten.compact.max
+      document = HtmlDocument.get(library.url(path:, query: params))
+      [1, (document / 'ul.pagination-list li.pagination-page').text.split(/\s+/).map(&:to_i)].flatten.compact.max
     end
 
     def params

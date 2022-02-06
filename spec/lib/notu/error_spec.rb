@@ -16,7 +16,7 @@ describe Notu::Error do
     end
 
     it 'default one if blank' do
-      expect(Notu::Error.new(" ").message).to eq('Notu::Error')
+      expect(Notu::Error.new(' ').message).to eq('Notu::Error')
     end
 
   end

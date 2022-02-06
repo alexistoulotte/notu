@@ -26,13 +26,13 @@ module Notu
           return response.body
         end
       end
-    rescue Net::ReadTimeout, Timeout::Error, Timeout::Error, Zlib::BufError => exception
-      raise NetworkError.new(exception) if options[:max_retries] < 1
+    rescue Timeout::Error, Zlib::BufError => e
+      raise NetworkError.new(e) if options[:max_retries] < 1
       options[:max_retries] -= 1
       sleep(options[:retry_sleep])
       get(url, options)
-    rescue => exception
-      raise NetworkError.new(exception)
+    rescue => e
+      raise NetworkError.new(e)
     end
 
   end

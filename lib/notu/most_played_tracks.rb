@@ -10,7 +10,7 @@ module Notu
       '90 days' => 'LAST_90_DAYS',
       '365 days' => 'LAST_365_DAYS',
       'Overall' => '',
-    }
+    }.freeze
 
     attr_reader :period
 
@@ -20,15 +20,15 @@ module Notu
       self.period = options['period']
     end
 
-    def each(&block)
+    def each
       return unless block_given?
       page_urls.each do |url|
         document = HtmlDocument.get(url)
-        (document/'table.chartlist tbody tr').each do |element|
-          artist = (element/'td.chartlist-artist a').first.try(:text) || next
-          title = (element/'td.chartlist-name a').first.try(:text) || next
-          plays_count = (element/'td.chartlist-bar .chartlist-count-bar-value').text.gsub(/[^\d]/, '').presence || next
-          yield(Track.new(artist: artist, plays_count: plays_count, title: title))
+        (document / 'table.chartlist tbody tr').each do |element|
+          artist = (element / 'td.chartlist-artist a').first.try(:text) || next
+          title = (element / 'td.chartlist-name a').first.try(:text) || next
+          plays_count = (element / 'td.chartlist-bar .chartlist-count-bar-value').text.gsub(/[^\d]/, '').presence || next
+          yield(Track.new(artist:, plays_count:, title:))
         end
       end
       nil

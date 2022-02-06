@@ -20,7 +20,7 @@ describe Notu::LovedTracks, :vcr do
 
     it 'returns nil' do
       allow(loved_tracks).to receive(:pages_count).and_return(1)
-      expect(loved_tracks.each {}).to be_nil
+      expect(loved_tracks.each).to be_nil
     end
 
   end

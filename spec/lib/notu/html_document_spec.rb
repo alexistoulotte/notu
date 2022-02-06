@@ -6,12 +6,12 @@ describe Notu::HtmlDocument, :vcr do
 
     it 'returns document parsed' do
       document = Notu::HtmlDocument.get('http://alweb.org')
-      expect((document/'title').text).to eq('Alexis Toulotte')
+      expect((document / 'title').text).to eq('Alexis Toulotte')
     end
 
     it 'follows redirects' do
       document = Notu::HtmlDocument.get('http://www.alweb.org')
-      expect((document/'title').text).to eq('Alexis Toulotte')
+      expect((document / 'title').text).to eq('Alexis Toulotte')
     end
 
     it 'raise a NetworkError on 404' do

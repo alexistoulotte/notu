@@ -34,7 +34,7 @@ describe Notu::MostPlayedTracks, :vcr do
     end
 
     it 'returns nil' do
-      expect(most_played_tracks.each {}).to be_nil
+      expect(most_played_tracks.each).to be_nil
     end
 
   end
