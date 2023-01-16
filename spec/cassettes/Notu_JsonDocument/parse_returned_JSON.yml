@@ -41,9 +41,9 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '119'
       Date:
-      - Mon, 16 Jan 2023 09:12:30 GMT
+      - Mon, 16 Jan 2023 11:08:01 GMT
       X-Ratelimit-Reset:
-      - '1673860387'
+      - '1673867287'
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -58,5 +58,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"id":1,"title":"iPhone 9","description":"An apple mobile which is
         nothing like apple","price":549,"discountPercentage":12.96,"rating":4.69,"stock":94,"brand":"Apple","category":"smartphones","thumbnail":"https://i.dummyjson.com/data/products/1/thumbnail.jpg","images":["https://i.dummyjson.com/data/products/1/1.jpg","https://i.dummyjson.com/data/products/1/2.jpg","https://i.dummyjson.com/data/products/1/3.jpg","https://i.dummyjson.com/data/products/1/4.jpg","https://i.dummyjson.com/data/products/1/thumbnail.jpg"]}'
-  recorded_at: Mon, 16 Jan 2023 09:12:30 GMT
+  recorded_at: Mon, 16 Jan 2023 11:08:01 GMT
 recorded_with: VCR 6.1.0

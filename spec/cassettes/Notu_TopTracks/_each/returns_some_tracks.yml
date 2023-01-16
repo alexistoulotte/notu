@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=91f5d6a201de58e0c0a0d858573dddf0&format=json&limit=50&method=user.getTopTracks&page=1&user=alexistoulotte
+    uri: https://ws.audioscrobbler.com/2.0?api_key=91f5d6a201de58e0c0a0d858573dddf0&format=json&limit=50&method=user.getTopTracks&page=1&period=90%20days&user=alexistoulotte
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Mon, 16 Jan 2023 09:12:20 GMT
+      - Mon, 16 Jan 2023 11:08:02 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -115,5 +115,5 @@ http_interactions:
         Intelligence","mbid":"862f369a-4139-48f9-af9c-eb4daadd804a"},"url":"https:\/\/www.last.fm\/music\/Artificial+Intelligence\/_\/Desperado","duration":"376","@attr":{"rank":"48"},"playcount":"62"},{"streamable":{"fulltrack":"0","#text":"0"},"mbid":"2f77bf52-5769-3d38-9a70-c398a983e25f","name":"Don''t
         Follow","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/2a96cbd8b46e442fc41c2b86b821562f.png"}],"artist":{"url":"https:\/\/www.last.fm\/music\/Cyantific","name":"Cyantific","mbid":"25578af1-83dc-4fbe-a3a9-587ab5424342"},"url":"https:\/\/www.last.fm\/music\/Cyantific\/_\/Don%27t+Follow","duration":"399","@attr":{"rank":"49"},"playcount":"62"},{"streamable":{"fulltrack":"0","#text":"0"},"mbid":"bf076b88-407d-38ca-87f4-b2f841764c99","name":"Jump
         N Twist","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/2a96cbd8b46e442fc41c2b86b821562f.png"}],"artist":{"url":"https:\/\/www.last.fm\/music\/Freestylers","name":"Freestylers","mbid":"60dd8303-5ee8-4c99-a19c-009e07c17aeb"},"url":"https:\/\/www.last.fm\/music\/Freestylers\/_\/Jump+N+Twist","duration":"313","@attr":{"rank":"50"},"playcount":"62"}],"@attr":{"user":"alexistoulotte","totalPages":"298","page":"1","perPage":"50","total":"14895"}}}'
-  recorded_at: Mon, 16 Jan 2023 09:12:20 GMT
+  recorded_at: Mon, 16 Jan 2023 11:08:02 GMT
 recorded_with: VCR 6.1.0

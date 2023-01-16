@@ -20,7 +20,7 @@ module Notu
       pages_count = nil
       page = 1
       loop do
-        json = JsonDocument.get(user_api.url(limit: 50, method: 'user.getTopTracks', page:))
+        json = JsonDocument.get(user_api.url(limit: 50, method: 'user.getTopTracks', page:, period:))
         pages_count = json['toptracks']['@attr']['totalPages'].to_i
         json['toptracks']['track'].each do |track_json|
           artist = track_json['artist']['name'] || next
