@@ -4,6 +4,24 @@ describe Notu::Library, :vcr do
 
   let(:library) { Notu::Library.new(username: 'alexistoulotte') }
 
+  describe '#api' do
+
+    it 'has a default value' do
+      expect(Notu::Library.new(username: 'John').api.key).to eq('91f5d6a201de58e0c0a0d858573dddf0')
+    end
+
+    it 'can be specified' do
+      expect(Notu::Library.new(api: Notu::Api.new(key: '424243'), username: 'john').api.key).to eq('424243')
+    end
+
+    it 'must be specified' do
+      expect {
+        Notu::Library.new(api: nil, username: 'john')
+      }.to raise_error('API must be specified')
+    end
+
+  end
+
   describe '#loved_tracks' do
 
     it 'returns a LovedTracks object' do
@@ -17,19 +35,19 @@ describe Notu::Library, :vcr do
     it 'returns a LovedTracks object' do
       most_played_tracks = library.most_played_tracks
       expect(most_played_tracks).to be_a(Notu::MostPlayedTracks)
-      expect(most_played_tracks.period).to eq('7 days')
+      expect(most_played_tracks.period).to eq('overall')
     end
 
     it 'accepts options' do
-      expect(library.most_played_tracks(period: '30 days').period).to eq('30 days')
+      expect(library.most_played_tracks(period: '1month').period).to eq('1month')
     end
 
   end
 
-  describe '#played_tracks' do
+  describe '#recent_tracks' do
 
-    it 'returns a PlayedTrack object' do
-      expect(library.played_tracks).to be_a(Notu::PlayedTracks)
+    it 'returns a RecentTracks object' do
+      expect(library.recent_tracks).to be_a(Notu::RecentTracks)
     end
 
   end
@@ -40,78 +58,32 @@ describe Notu::Library, :vcr do
       expect(library.username).to eq('alexistoulotte')
     end
 
-    it 'can be specified as string' do
-      expect(Notu::Library.new('username' => 'john42').username).to eq('john42')
+    it 'can be specified as symbol' do
+      expect(Notu::Library.new(username: 'john42').username).to eq('john42')
     end
 
     it 'raise an error if nil' do
       expect {
         Notu::Library.new(username: nil)
-      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: nil')
+      }.to raise_error(Notu::Error, 'Username must be specified')
     end
 
     it 'raise an error if blank' do
       expect {
         Notu::Library.new(username: ' ')
-      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: " "')
-    end
-
-    it 'raise an error if it contains spaces' do
-      expect {
-        Notu::Library.new(username: 'alexis toulotte')
-      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "alexis toulotte"')
-    end
-
-    it 'raise an error if invalid' do
-      expect {
-        Notu::Library.new(username: 'alex$')
-      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "alex$"')
-
-      expect {
-        Notu::Library.new(username: 'ALex^')
-      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "ALex^"')
-    end
-
-    it 'is stripped' do
-      expect(Notu::Library.new(username: " alexistoulotte \n").username).to eq('alexistoulotte')
-    end
-
-    it 'is downcased' do
-      expect(Notu::Library.new(username: 'AlexIsT').username).to eq('alexist')
-    end
-
-    it 'raise an error if it does not exist' do
-      expect {
-        Notu::Library.new(username: 'jognjjeqwk')
-      }.to raise_error(Notu::UnknownUsernameError, 'No such Last.fm username: "jognjjeqwk"')
+      }.to raise_error(Notu::Error, 'Username must be specified')
     end
 
   end
 
   describe '#url' do
 
-    it 'returns default url if path not given' do
-      expect(library.url).to eq('https://www.last.fm/user/alexistoulotte')
+    it 'returns default url' do
+      expect(library.url).to eq('https://ws.audioscrobbler.com/2.0?user=alexistoulotte&api_key=91f5d6a201de58e0c0a0d858573dddf0&format=json')
     end
 
-    it 'returns default url if path is blank' do
-      expect(library.url(path: ' ')).to eq('https://www.last.fm/user/alexistoulotte')
-    end
-
-    it 'accepts path option as string' do
-      expect(library.url('path' => '/library/loved')).to eq('https://www.last.fm/user/alexistoulotte/library/loved')
-    end
-
-    it 'returns URL and path if given' do
-      expect(library.url(path: '/library/loved')).to eq('https://www.last.fm/user/alexistoulotte/library/loved')
-    end
-
-    it 'adds first / to given path' do
-      expect(library.url(path: 'library/loved')).to eq('https://www.last.fm/user/alexistoulotte/library/loved')
-    end
-
-    it 'accepts query option' do
-      expect(library.url(query: { bar: 42, 'baz' => 'hello&world' })).to eq('https://www.last.fm/user/alexistoulotte?bar=42&baz=hello%26world')
+    it 'accepts query parameters' do
+      expect(library.url(bar: 42, 'baz' => 'hello&world')).to eq('https://ws.audioscrobbler.com/2.0?bar=42&baz=hello%26world&user=alexistoulotte&api_key=91f5d6a201de58e0c0a0d858573dddf0&format=json')
     end
 
   end

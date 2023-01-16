@@ -1,6 +1,6 @@
 module Notu
 
-  class LovedTracks
+  class RecentTracks
 
     include Enumerable
 
@@ -16,10 +16,10 @@ module Notu
       pages_count = nil
       page = 1
       loop do
-        json = JsonDocument.get(library.url(limit: 50, method: 'user.getLovedTracks', page:))
-        pages_count = json['lovedtracks']['@attr']['totalPages'].to_i
-        json['lovedtracks']['track'].each do |track_json|
-          artist = track_json['artist']['name'] || next
+        json = JsonDocument.get(library.url(limit: 50, method: 'user.getRecentTracks', page:))
+        pages_count = json['recenttracks']['@attr']['totalPages'].to_i
+        json['recenttracks']['track'].each do |track_json|
+          artist = track_json['artist']['#text'] || next
           title = track_json['name'] || next
           yield(Track.new(artist:, title:))
         end

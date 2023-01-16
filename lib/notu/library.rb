@@ -2,14 +2,11 @@ module Notu
 
   class Library
 
-    HOST = 'www.last.fm'.freeze
+    attr_reader :api, :username
 
-    attr_reader :username
-
-    def initialize(options = {})
-      @semaphore = Mutex.new
-      options = options.symbolize_keys
-      self.username = options[:username]
+    def initialize(username:, api: Api.new)
+      @api = api.presence || raise(Error.new('API must be specified'))
+      @username = username.try(:squish).presence || raise(Error.new('Username must be specified'))
     end
 
     def loved_tracks
@@ -20,38 +17,12 @@ module Notu
       MostPlayedTracks.new(self, options)
     end
 
-    def played_tracks
-      PlayedTracks.new(self)
+    def recent_tracks
+      RecentTracks.new(self)
     end
 
-    def url(options = {})
-      options = options.symbolize_keys
-      path = options[:path].presence
-      query = options[:query].presence
-      query = options[:query].map { |name, value| "#{CGI.escape(name.to_s)}=#{CGI.escape(value.to_s)}" }.join('&') if options[:query].is_a?(Hash)
-      "https://#{HOST}/user/#{username}".tap do |url|
-        if path.present?
-          url << '/' unless path.starts_with?('/')
-          url << path
-        end
-        if query.present?
-          url << '?' << query
-        end
-      end
-    end
-
-    private
-
-    def username=(value)
-      @semaphore.synchronize do
-        @username = value.to_s.strip.downcase
-        raise UnknownUsernameError.new(value) if username !~ /^[a-z0-9_]+$/
-        begin
-          HtmlDocument.get(url)
-        rescue
-          raise UnknownUsernameError.new(value)
-        end
-      end
+    def url(params = {})
+      api.url((params || {}).symbolize_keys.merge(user: username))
     end
 
   end
