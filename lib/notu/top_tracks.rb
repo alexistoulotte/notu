@@ -1,16 +1,16 @@
 module Notu
 
-  class MostPlayedTracks
+  class TopTracks
 
     include Enumerable
 
     PERIODS = %w(overall 7day 1month 3month 6month 12month).freeze
 
-    attr_reader :library, :period
+    attr_reader :period, :user_api
 
-    def initialize(library, options = {})
-      raise ArgumentError.new("#{self.class}#library must be a library, #{library.inspect} given") unless library.is_a?(Library)
-      @library = library
+    def initialize(user_api, options = {})
+      raise ArgumentError.new("#{self.class}#user_api must be specified") unless user_api
+      @user_api = user_api
       options = options.symbolize_keys.reverse_merge(period: PERIODS.first)
       self.period = options[:period]
     end
@@ -20,7 +20,7 @@ module Notu
       pages_count = nil
       page = 1
       loop do
-        json = JsonDocument.get(library.url(limit: 50, method: 'user.getTopTracks', page:))
+        json = JsonDocument.get(user_api.url(limit: 50, method: 'user.getTopTracks', page:))
         pages_count = json['toptracks']['@attr']['totalPages'].to_i
         json['toptracks']['track'].each do |track_json|
           artist = track_json['artist']['name'] || next
@@ -38,7 +38,7 @@ module Notu
 
     def period=(value)
       string_value = value.to_s
-      raise ArgumentError.new("Notu::MostPlayedTracks#period is invalid: #{value.inspect}") unless PERIODS.include?(string_value)
+      raise ArgumentError.new("#{self.class.name}#period is invalid: #{value.inspect}") unless PERIODS.include?(string_value)
       @period = string_value
     end
 

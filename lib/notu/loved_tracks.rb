@@ -4,11 +4,11 @@ module Notu
 
     include Enumerable
 
-    attr_reader :library
+    attr_reader :user_api
 
-    def initialize(library)
-      raise ArgumentError.new("#{self.class}#library must be a library, #{library.inspect} given") unless library.is_a?(Library)
-      @library = library
+    def initialize(user_api)
+      raise ArgumentError.new("#{self.class}#user_api must be specified") unless user_api
+      @user_api = user_api
     end
 
     def each
@@ -16,7 +16,7 @@ module Notu
       pages_count = nil
       page = 1
       loop do
-        json = JsonDocument.get(library.url(limit: 50, method: 'user.getLovedTracks', page:))
+        json = JsonDocument.get(user_api.url(limit: 50, method: 'user.getLovedTracks', page:))
         pages_count = json['lovedtracks']['@attr']['totalPages'].to_i
         json['lovedtracks']['track'].each do |track_json|
           artist = track_json['artist']['name'] || next

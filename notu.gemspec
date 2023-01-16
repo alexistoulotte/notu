@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.email = 'al@alweb.org'
   s.homepage = 'https://github.com/alexistoulotte/notu'
   s.summary = 'API for Last.fm'
-  s.description = 'API to get Last.fm tracks (most played, loved, etc.)'
+  s.description = 'API to get Last.fm tracks (top, loved, etc.)'
   s.license = 'MIT'
 
   s.files = %x(git ls-files | grep -vE '^(spec/|test/|\\.|Gemfile|Rakefile)').split("\n")

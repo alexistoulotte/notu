@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Notu::RecentTracks, :vcr do
 
-  let(:library) { Notu::Library.new(username: 'alexistoulotte') }
-  let(:recent_tracks) { Notu::RecentTracks.new(library) }
+  let(:recent_tracks) { Notu::RecentTracks.new(user_api) }
+  let(:user_api) { Notu::UserApi.new(username: 'alexistoulotte') }
 
   describe '#each' do
 

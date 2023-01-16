@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Notu::LovedTracks, :vcr do
 
-  let(:library) { Notu::Library.new(username: 'alexistoulotte') }
-  let(:loved_tracks) { Notu::LovedTracks.new(library) }
+  let(:loved_tracks) { Notu::LovedTracks.new(user_api) }
+  let(:user_api) { Notu::UserApi.new(username: 'alexistoulotte') }
 
   describe '#each' do
 
@@ -20,16 +20,16 @@ describe Notu::LovedTracks, :vcr do
 
   end
 
-  describe '#library' do
+  describe '#user_api' do
 
-    it 'is library given at initialization' do
-      expect(loved_tracks.library).to be(library)
+    it 'is user_api given at initialization' do
+      expect(loved_tracks.user_api).to be(user_api)
     end
 
-    it 'raise an error if library is nil' do
+    it 'raise an error if user_api is nil' do
       expect {
         Notu::LovedTracks.new(nil)
-      }.to raise_error(ArgumentError, 'Notu::LovedTracks#library must be a library, nil given')
+      }.to raise_error(ArgumentError, 'Notu::LovedTracks#user_api must be specified')
     end
 
   end

@@ -1,6 +1,6 @@
 # Notu
 
-API to get Last.fm tracks (most played, loved, etc.).
+API to get Last.fm tracks (top, loved, etc.).
 
 ## Installation
 
@@ -15,17 +15,17 @@ Then, just run `bundle install`.
 ## Example
 
 ```ruby
-library = Notu::Library.new(username: 'johndoe')
+user_api = Notu::UserApi.new(username: 'johndoe')
 
-library.loved_tracks.each do |track|
+user_api.loved_tracks.each do |track|
   puts track.artist
 end
 
-library.most_played_tracks(period: 'last_month').each do |track|
+user_api.top_tracks(period: '3month').each do |track|
   puts "#{track.artist}: #{track.plays_count}"
 end
 
-library.played_tracks.each do |track|
+user_api.recent_tracks.each do |track|
   puts track.title
 end
 ```
